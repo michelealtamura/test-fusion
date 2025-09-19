@@ -1,0 +1,38 @@
+<div class="login-page container py-5">
+  <div class="login-card card mx-auto shadow-sm">
+    <div class="card-body">
+      <h2 class="login-title card-title mb-3">Accesso</h2>
+
+      <div *ngIf="utente; else loginForm">
+        <p class="mb-3">Sei connesso come <strong>{{utente.email}}</strong>.</p>
+        <button class="btn btn-outline-danger" (click)="logout()">Logout</button>
+      </div>
+
+      <ng-template #loginForm>
+        <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input id="email" type="email" class="form-control" formControlName="email" [class.is-invalid]="form.get('email')?.touched && form.get('email')?.invalid">
+            <div *ngIf="form.get('email')?.touched && form.get('email')?.invalid" class="invalid-feedback">
+              <div *ngIf="form.get('email')?.errors?.['required']">Email obbligatoria.</div>
+              <div *ngIf="form.get('email')?.errors?.['email']">Formato email non valido.</div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input id="password" type="password" class="form-control" formControlName="password" [class.is-invalid]="form.get('password')?.touched && form.get('password')?.invalid">
+            <div *ngIf="form.get('password')?.touched && form.get('password')?.invalid" class="invalid-feedback">
+              <div *ngIf="form.get('password')?.errors?.['required']">Password obbligatoria.</div>
+            </div>
+          </div>
+
+          <div class="d-grid">
+            <button class="btn btn-primary btn-login" type="submit" [disabled]="submitting">{{ submitting ? 'Accesso...' : 'Accedi' }}</button>
+          </div>
+        </form>
+      </ng-template>
+
+    </div>
+  </div>
+</div>
