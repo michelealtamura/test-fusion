@@ -4,7 +4,7 @@
       <h2 class="login-title card-title mb-3">Accesso</h2>
 
       <div *ngIf="utente; else loginForm">
-        <p class="mb-3">Sei connesso come <strong>{{utente.email}}</strong>.</p>
+        <p class="mb-3">Sei connesso come <strong>{{utente?.email}}</strong>.</p>
         <button class="btn btn-outline-danger" (click)="logout()">Logout</button>
       </div>
 
