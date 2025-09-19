@@ -12,6 +12,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { PaginaNonTrovataComponent } from './components/pagina-non-trovata/pagina-non-trovata.component';
+import { LoginComponent } from './components/login/login.component';
 import { InMemoryRepository } from './service/dao/in-memory-repository';
 import { AuthTokenInterceptor } from './service/interceptors/auth-token.interceptor';
 import { ErrorInterceptor } from './service/interceptors/error.interceptor';
@@ -23,7 +24,8 @@ import { LoadingInterceptor } from './service/interceptors/loading.interceptor';
     HeaderComponent,
     FooterComponent,
     PaginaNonTrovataComponent,
-    LoadingComponent
+    LoadingComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
