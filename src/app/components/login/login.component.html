@@ -23,7 +23,7 @@
         <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
 
           <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
+            <label for="email" class="form-label">Inserire Email</label>
             <div class="input-group">
               <span class="input-group-text">&#64;</span>
               <input id="email" type="email" class="form-control" formControlName="email" [class.is-invalid]="form.get('email')?.touched && form.get('email')?.invalid" placeholder="es. nome@esempio.com">
